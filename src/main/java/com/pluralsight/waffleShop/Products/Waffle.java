@@ -3,7 +3,10 @@ package com.pluralsight.waffleShop.Products;
 import com.pluralsight.waffleShop.Toppings.Chocolate;
 import com.pluralsight.waffleShop.Toppings.Fruit;
 import com.pluralsight.waffleShop.Toppings.Meat;
+import com.pluralsight.waffleShop.Toppings.Syrup;
+import com.pluralsight.waffleShop.Toppings.Side;
 import com.pluralsight.waffleShop.Toppings.Topping;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -45,6 +48,45 @@ public class Waffle extends Product {
     }
 
     public void removeToppings(Scanner scanner) {
+        if(listOfTopping.isEmpty()){
+            System.out.println("No Toppings to remove");
+            return;
+        }
+        while (true){
+            System.out.println("╔═════════════════ REMOVE TOPPING ══════════════╗\n");
+
+            for (Topping topping : listOfTopping) {
+                System.out.println("       " + topping);
+            }
+            System.out.println();
+            System.out.println(
+
+                                "║      Enter Topping To REMOVE                  ║\n" +
+                                "║   0. Cancel                                   ║\n" +
+                                "╚═══════════════════════════════════════════════╝"
+            );
+            String userInput = scanner.nextLine();
+
+            if (userInput.equalsIgnoreCase("0")){
+                return;
+            }
+
+            Topping remove = null;
+
+            for (Topping topping : listOfTopping) {
+                if (topping.getName().equalsIgnoreCase(userInput)){
+                   remove = topping;
+                }
+            }
+
+            if (remove != null){
+                listOfTopping.remove(remove);
+                System.out.println("Removed" + remove);
+            }else {
+                System.out.println(remove + " is not included!");
+            }
+
+        }
     }
 
 
@@ -220,7 +262,7 @@ public class Waffle extends Product {
         String extraChoice = scanner.nextLine();
         boolean wantsExtra = extraChoice.equalsIgnoreCase("yes");
 
-        addToppings(new Fruit(syrupName,wantsExtra));
+        addToppings(new Syrup(syrupName,wantsExtra));
         System.out.println("Added " + syrupName + "Successfully!");
     }
 
@@ -250,7 +292,7 @@ public class Waffle extends Product {
         String extraChoice = scanner.nextLine();
         boolean wantsExtra = extraChoice.equalsIgnoreCase("yes");
 
-        addToppings(new Fruit(sideName,wantsExtra));
+        addToppings(new Side(sideName,wantsExtra));
         System.out.println("Added " + sideName + "Successfully!");
     }
 
@@ -284,7 +326,7 @@ public class Waffle extends Product {
     }
 
     public String toString() {
-        String base = "Waffle: " + size + " " + waffleType + " Waffle - $" + getPrice();
+        String base = "Waffle: " + size + " " + waffleType + " - $" + getPrice();
 
         if (listOfTopping.isEmpty()) {
             return base + "\n[ No Toppings ]";
