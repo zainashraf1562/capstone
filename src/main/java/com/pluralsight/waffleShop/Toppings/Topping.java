@@ -31,4 +31,10 @@ public abstract class Topping {
     public boolean isExtra() {
         return isExtra;
     }
+
+    @Override
+    public String toString() {
+        String extraLabel = isExtra ? " (extra)" : "";
+        return name + extraLabel;
+    }
 }

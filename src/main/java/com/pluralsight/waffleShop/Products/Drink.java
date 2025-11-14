@@ -31,6 +31,6 @@ public class Drink extends Product{
 
     @Override
     public String toString() {
-        return " (" + size + ") " + getName() + " shake: $" + getPrice();
+        return getName() + " MilkShake: $" + getPrice();
     }
 }
