@@ -14,12 +14,12 @@ public class Waffle extends Product {
     private ArrayList<Topping> listOfTopping;
     private boolean isCrispy;
 
-    public Waffle(String name, String waffleType, String size, ArrayList<Topping> listOfTopping, boolean isCrispy) {
+    public Waffle(String name, String waffleType, String size, boolean isCrispy) {
         super(name);
         this.waffleType = waffleType;
         this.size = size;
-        this.listOfTopping = listOfTopping;
         this.isCrispy = isCrispy;
+        this.listOfTopping = new ArrayList<>();
     }
 
     public String getWaffleType() {
@@ -257,7 +257,7 @@ public class Waffle extends Product {
     public void setWaffleType(Scanner scanner, Waffle waffle) {
         System.out.println("Waffle Types: ");
         System.out.println("1. Belgian");
-        System.out.println("2. Chocolate Chip");
+        System.out.println("2. Chocolate");
         System.out.println("3. Cinnamon");
         System.out.println("4. Buttermilk");
         System.out.println("0. Exit");
@@ -274,7 +274,7 @@ public class Waffle extends Product {
             case 1 -> waffleName = "Belgian";
             case 2 -> waffleName = "Chocolate Chip";
             case 3 -> waffleName = "Cinnamon";
-            case 4 -> waffleName = "Classic Buttermilk";
+            case 4 -> waffleName = "Buttermilk";
             default -> {
                 System.out.println("Try Again!");
                 return;
