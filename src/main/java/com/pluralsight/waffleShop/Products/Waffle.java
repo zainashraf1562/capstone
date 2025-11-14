@@ -146,7 +146,7 @@ public class Waffle extends Product {
         boolean wantsExtra = extraChoice.equalsIgnoreCase("yes");
 
         addToppings(new Meat(meatName , waffle.getSize() ,wantsExtra));
-        System.out.println("Added " + meatName + "Successfully!");
+        System.out.println("Added " + meatName + " Successfully!");
 
     }
 
@@ -183,7 +183,7 @@ public class Waffle extends Product {
         boolean wantsExtra = extraChoice.equalsIgnoreCase("yes");
 
         addToppings(new Chocolate(chocName , waffle.getSize() ,wantsExtra));
-        System.out.println("Added " + chocName + "Successfully!");
+        System.out.println("Added " + chocName + " Successfully!");
     }
 
     public void addFruit(Scanner scanner, Waffle waffle) {
@@ -227,7 +227,7 @@ public class Waffle extends Product {
         boolean wantsExtra = extraChoice.equalsIgnoreCase("yes");
 
         addToppings(new Fruit(fruitName ,wantsExtra));
-        System.out.println("Added " + fruitName + "Successfully!");
+        System.out.println("Added " + fruitName + " Successfully!");
     }
 
     public void addSyrup(Scanner scanner, Waffle waffle) {
@@ -263,7 +263,7 @@ public class Waffle extends Product {
         boolean wantsExtra = extraChoice.equalsIgnoreCase("yes");
 
         addToppings(new Syrup(syrupName,wantsExtra));
-        System.out.println("Added " + syrupName + "Successfully!");
+        System.out.println("Added " + syrupName + " Successfully!");
     }
 
     public void addSide(Scanner scanner, Waffle waffle) {
@@ -293,37 +293,9 @@ public class Waffle extends Product {
         boolean wantsExtra = extraChoice.equalsIgnoreCase("yes");
 
         addToppings(new Side(sideName,wantsExtra));
-        System.out.println("Added " + sideName + "Successfully!");
+        System.out.println("Added " + sideName + " Successfully!");
     }
 
-    public void setWaffleType(Scanner scanner, Waffle waffle) {
-        System.out.println("Waffle Types: ");
-        System.out.println("1. Belgian");
-        System.out.println("2. Chocolate");
-        System.out.println("3. Cinnamon");
-        System.out.println("4. Buttermilk");
-        System.out.println("0. Exit");
-
-        int waffleChoice = scanner.nextInt();
-        scanner.nextLine();
-
-        if (waffleChoice == 0){
-            return;
-        }
-
-        String waffleName = "";
-        switch (waffleChoice) {
-            case 1 -> waffleName = "Belgian";
-            case 2 -> waffleName = "Chocolate Chip";
-            case 3 -> waffleName = "Cinnamon";
-            case 4 -> waffleName = "Buttermilk";
-            default -> {
-                System.out.println("Try Again!");
-                return;
-            }
-        }
-        waffleType = waffleName;
-    }
 
     public String toString() {
         String base = "Waffle: " + size + " " + waffleType + " - $" + getPrice();
