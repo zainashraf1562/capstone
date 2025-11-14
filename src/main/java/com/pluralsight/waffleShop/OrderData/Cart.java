@@ -20,6 +20,10 @@ public class Cart {
         myCart.add(product);
     }
 
+    public void emptyMyCart(){
+        myCart.clear();
+    }
+
     public double getTotalCost(){
         double sum = 0;
 
