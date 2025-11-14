@@ -262,25 +262,25 @@ public class Waffle extends Product {
         System.out.println("4. Buttermilk");
         System.out.println("0. Exit");
 
-        int sideChoice = scanner.nextInt();
+        int waffleChoice = scanner.nextInt();
         scanner.nextLine();
 
-        if (sideChoice == 0){
+        if (waffleChoice == 0){
             return;
         }
 
-        String sideName = "";
-        switch (sideChoice) {
-            case 1 -> sideName = "Belgian";
-            case 2 -> sideName = "Chocolate Chip";
-            case 3 -> sideName = "Cinnamon";
-            case 4 -> sideName = "Classic Buttermilk";
+        String waffleName = "";
+        switch (waffleChoice) {
+            case 1 -> waffleName = "Belgian";
+            case 2 -> waffleName = "Chocolate Chip";
+            case 3 -> waffleName = "Cinnamon";
+            case 4 -> waffleName = "Classic Buttermilk";
             default -> {
                 System.out.println("Try Again!");
                 return;
             }
         }
-        waffleType = sideName;
+        waffleType = waffleName;
     }
 
     public String toString() {
