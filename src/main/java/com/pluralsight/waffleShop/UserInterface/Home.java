@@ -2,7 +2,7 @@ package com.pluralsight.waffleShop.UserInterface;
 
 import com.pluralsight.waffleShop.OrderData.Cart;
 import com.pluralsight.waffleShop.OrderData.ReceiptDataManager;
-import com.pluralsight.waffleShop.Products.Drink;
+import com.pluralsight.waffleShop.Products.MilkShake;
 import com.pluralsight.waffleShop.Products.Icecream;
 import com.pluralsight.waffleShop.Products.SignatureWaffles.ClassicWaffle;
 import com.pluralsight.waffleShop.Products.SignatureWaffles.SpecialWaffle;
@@ -322,7 +322,7 @@ public class Home {
             }
         }
 
-        Drink drink = new Drink(drinkName, shakeSize);
+        MilkShake drink = new MilkShake(drinkName, shakeSize);
         myCart.addProduct(drink);
         System.out.println(green + "Successfully added drink!"+ reset);
     }

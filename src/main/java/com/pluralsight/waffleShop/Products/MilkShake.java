@@ -1,9 +1,9 @@
 package com.pluralsight.waffleShop.Products;
 
-public class Drink extends Product{
+public class MilkShake extends Product{
     private String size;
 
-    public Drink(String name, String size) {
+    public MilkShake(String name, String size) {
         super(name);
         this.size = size;
     }
