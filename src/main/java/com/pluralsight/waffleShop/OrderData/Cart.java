@@ -24,19 +24,22 @@ public class Cart {
         myCart.clear();
     }
 
-    public void showMyCart(){
-        if(getMyCart().isEmpty()){
-            System.out.println("Empty Cart!");
+    public void showMyCart() {
+        if (getMyCart().isEmpty()) {
+            System.out.println("[ Empty Cart ]");
             return;
         }
-        System.out.println("My Cart: ");
-        System.out.println();
+
+        System.out.println("=== MY CART ===\n");
+
         for (Product product : myCart) {
             System.out.println(product);
+            System.out.println("-----------------------");
         }
-        System.out.println("\nYour total is: $" + getTotalCost());
 
+        System.out.println("\nTotal: $" + String.format("%.2f", getTotalCost()));
     }
+
 
     public double getTotalCost(){
         double sum = 0;
